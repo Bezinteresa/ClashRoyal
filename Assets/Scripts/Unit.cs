@@ -31,9 +31,29 @@ public class Unit : MonoBehaviour
         
         _currentState.Run();
 
-
     }
 
+    public void SetState(UnitStateType type) {
 
+        _currentState.Finish();
+
+        switch (type) {
+            case UnitStateType.Default:
+                _currentState = _defaultState;
+                break;
+            case UnitStateType.Chase:
+                _currentState = _chaseState;
+                break;
+            case UnitStateType.Attack:
+                _currentState = _attackState;
+                break;
+            default:
+                Debug.LogError("не обрабатывается состояние " + type);
+                break;
+        }
+
+        _currentState.Init();
+
+    }
 
 }

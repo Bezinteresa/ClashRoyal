@@ -1523,6 +1523,58 @@ Transform:
   - {fileID: 1917451849}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1512435584
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1512435586}
+  - component: {fileID: 1512435585}
+  m_Layer: 0
+  m_Name: MapInfo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1512435585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1512435584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f46c9920c115a154bb427dd21f9337d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enemyTowers:
+  - {fileID: 2050788251}
+  - {fileID: 849080313}
+  - {fileID: 1105179970}
+  _playerTowers:
+  - {fileID: 1004437035}
+  - {fileID: 2055006384}
+  - {fileID: 744866230}
+--- !u!4 &1512435586
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1512435584}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.5224824, y: 4.249119, z: -0.4049554}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1540414738
 GameObject:
   m_ObjectHideFlags: 0
@@ -1656,7 +1708,7 @@ Transform:
   m_GameObject: {fileID: 1795658319}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.02, y: 0, z: -12.36}
+  m_LocalPosition: {x: 1.58, y: 0, z: -12.36}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1992,3 +2044,4 @@ SceneRoots:
   - {fileID: 849080313}
   - {fileID: 1105179970}
   - {fileID: 1795658320}
+  - {fileID: 1512435586}

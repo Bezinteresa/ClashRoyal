@@ -1,4 +1,4 @@
-using System.Collections;
+
 using UnityEngine;
 
 public abstract class UnitState : ScriptableObject
@@ -14,5 +14,14 @@ public abstract class UnitState : ScriptableObject
     public abstract void Run();
     
 
+
+}
+
+public enum UnitStateType {
+
+    None = 0,
+    Default = 1,
+    Chase = 2,
+    Attack = 3
 
 }
