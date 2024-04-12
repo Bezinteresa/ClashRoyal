@@ -5,7 +5,7 @@ public abstract class UnitState : ScriptableObject
 {
 
     protected Unit _unit;
-    public void Constructor(Unit unit) {
+    public virtual void Constructor(Unit unit) {
         _unit = unit;
     }
 

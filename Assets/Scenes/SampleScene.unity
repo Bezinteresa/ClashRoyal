@@ -734,6 +734,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 744866230}
+  - component: {fileID: 744866231}
   m_Layer: 0
   m_Name: Tower_R1
   m_TagString: Untagged
@@ -757,6 +758,19 @@ Transform:
   - {fileID: 883364470}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &744866231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 744866229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 705be9c837a18d94fbbceceb4063e80e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _radius: 1
 --- !u!1 &831187273
 GameObject:
   m_ObjectHideFlags: 0
@@ -920,6 +934,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 849080313}
+  - component: {fileID: 849080314}
   m_Layer: 0
   m_Name: Tower_L2
   m_TagString: Untagged
@@ -943,6 +958,19 @@ Transform:
   - {fileID: 1142578925}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &849080314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 849080312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 705be9c837a18d94fbbceceb4063e80e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _radius: 1
 --- !u!1 &856560081
 GameObject:
   m_ObjectHideFlags: 0
@@ -1299,6 +1327,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1004437035}
+  - component: {fileID: 1004437036}
   m_Layer: 0
   m_Name: KingTower_1
   m_TagString: Untagged
@@ -1322,6 +1351,19 @@ Transform:
   - {fileID: 636863587}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1004437036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1004437034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 705be9c837a18d94fbbceceb4063e80e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _radius: 1.5
 --- !u!1 &1105179969
 GameObject:
   m_ObjectHideFlags: 0
@@ -1331,6 +1373,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1105179970}
+  - component: {fileID: 1105179971}
   m_Layer: 0
   m_Name: Tower_R2
   m_TagString: Untagged
@@ -1354,6 +1397,19 @@ Transform:
   - {fileID: 875979532}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1105179971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1105179969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 705be9c837a18d94fbbceceb4063e80e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _radius: 1
 --- !u!1 &1142578924
 GameObject:
   m_ObjectHideFlags: 0
@@ -1553,13 +1609,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyTowers:
-  - {fileID: 2050788251}
-  - {fileID: 849080313}
-  - {fileID: 1105179970}
+  - {fileID: 2050788252}
+  - {fileID: 849080314}
+  - {fileID: 1105179971}
   _playerTowers:
-  - {fileID: 1004437035}
-  - {fileID: 2055006384}
-  - {fileID: 744866230}
+  - {fileID: 1004437036}
+  - {fileID: 2055006385}
+  - {fileID: 744866231}
 --- !u!4 &1512435586
 Transform:
   m_ObjectHideFlags: 0
@@ -1692,6 +1748,7 @@ GameObject:
   - component: {fileID: 1795658320}
   - component: {fileID: 1795658321}
   - component: {fileID: 1795658322}
+  - component: {fileID: 1795658323}
   m_Layer: 0
   m_Name: Warrior
   m_TagString: Untagged
@@ -1708,7 +1765,7 @@ Transform:
   m_GameObject: {fileID: 1795658319}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.58, y: 0, z: -12.36}
+  m_LocalPosition: {x: -0.82, y: 0, z: -12.36}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1749,9 +1806,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d341d3d499c6c9c4aa14f6f66dff33c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <isEnemy>k__BackingField: 0
+  parameters: {fileID: 1795658323}
   _defaultStateSO: {fileID: 11400000, guid: cfaa477e8fcf6234dadb778856451614, type: 2}
   _chaseStateSO: {fileID: 11400000, guid: cfaa477e8fcf6234dadb778856451614, type: 2}
   _attackStateSO: {fileID: 11400000, guid: cfaa477e8fcf6234dadb778856451614, type: 2}
+--- !u!114 &1795658323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1795658319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcfb81e4cf68c8d4395df390b1f74478, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <speed>k__BackingField: 4
+  <modelRadius>k__BackingField: 0.5
+  _startAttackDistance: 0.2
+  _stopAttackDiaaaastance: 0.3
 --- !u!1 &1917451848
 GameObject:
   m_ObjectHideFlags: 0
@@ -1866,6 +1941,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2050788251}
+  - component: {fileID: 2050788252}
   m_Layer: 0
   m_Name: KingTower_2
   m_TagString: Untagged
@@ -1889,6 +1965,19 @@ Transform:
   - {fileID: 488167670}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2050788252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2050788250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 705be9c837a18d94fbbceceb4063e80e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _radius: 1.5
 --- !u!1 &2055006383
 GameObject:
   m_ObjectHideFlags: 0
@@ -1898,6 +1987,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2055006384}
+  - component: {fileID: 2055006385}
   m_Layer: 0
   m_Name: Tower_L1
   m_TagString: Untagged
@@ -1921,6 +2011,19 @@ Transform:
   - {fileID: 856560082}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2055006385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2055006383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 705be9c837a18d94fbbceceb4063e80e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _radius: 1
 --- !u!1 &2129751897
 GameObject:
   m_ObjectHideFlags: 0

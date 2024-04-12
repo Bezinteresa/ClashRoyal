@@ -1,12 +1,12 @@
 
 using UnityEngine;
 
+[RequireComponent(typeof(UnitParameters))]
 public class Unit : MonoBehaviour
 {
 
-    //Default
-    //Chase
-    //Attack
+    [field: SerializeField] public bool isEnemy { get; private set; } = false;
+    [field: SerializeField] public UnitParameters parameters;
     [SerializeField] private UnitState _defaultStateSO;
     [SerializeField] private UnitState _chaseStateSO;
     [SerializeField] private UnitState _attackStateSO;
@@ -18,13 +18,15 @@ public class Unit : MonoBehaviour
     private void Start() {
         _defaultState = Instantiate(_defaultStateSO);
         _defaultState.Constructor(this);
+
         _chaseState = Instantiate(_chaseStateSO);
         _chaseState.Constructor(this);
+
         _attackState = Instantiate(_attackStateSO);
         _attackState.Constructor(this);
 
         _currentState = _defaultState;
-        _chaseState.Init();
+        _currentState.Init();
     }
 
     private void Update() {
@@ -51,6 +53,7 @@ public class Unit : MonoBehaviour
                 Debug.LogError("не обрабатывается состояние " + type);
                 break;
         }
+
 
         _currentState.Init();
 
