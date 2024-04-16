@@ -1874,7 +1874,7 @@ Transform:
   m_GameObject: {fileID: 1795658319}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.82, y: 0, z: -12.36}
+  m_LocalPosition: {x: 1.84, y: 0, z: -12.36}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1918,8 +1918,9 @@ MonoBehaviour:
   <isEnemy>k__BackingField: 0
   parameters: {fileID: 1795658323}
   _defaultStateSO: {fileID: 11400000, guid: cfaa477e8fcf6234dadb778856451614, type: 2}
-  _chaseStateSO: {fileID: 11400000, guid: cfaa477e8fcf6234dadb778856451614, type: 2}
+  _chaseStateSO: {fileID: 11400000, guid: 73667a5207df98342a3da7182e5f5f93, type: 2}
   _attackStateSO: {fileID: 11400000, guid: cfaa477e8fcf6234dadb778856451614, type: 2}
+  _debug: 0
 --- !u!114 &1795658323
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2076,8 +2077,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <speed>k__BackingField: 4
   <modelRadius>k__BackingField: 0.5
-  <startChaseDistance>k__BackingField: 5
-  <stopChaseDistance>k__BackingField: 7
+  <startChaseDistance>k__BackingField: 15
+  <stopChaseDistance>k__BackingField: 16
   _startAttackDistance: 0.2
   _stopAttackDiaaaastance: 0.3
 --- !u!114 &1972406758
@@ -2095,8 +2096,9 @@ MonoBehaviour:
   <isEnemy>k__BackingField: 1
   parameters: {fileID: 1972406757}
   _defaultStateSO: {fileID: 11400000, guid: cfaa477e8fcf6234dadb778856451614, type: 2}
-  _chaseStateSO: {fileID: 11400000, guid: cfaa477e8fcf6234dadb778856451614, type: 2}
+  _chaseStateSO: {fileID: 11400000, guid: 73667a5207df98342a3da7182e5f5f93, type: 2}
   _attackStateSO: {fileID: 11400000, guid: cfaa477e8fcf6234dadb778856451614, type: 2}
+  _debug: 0
 --- !u!195 &1972406759
 NavMeshAgent:
   m_ObjectHideFlags: 0

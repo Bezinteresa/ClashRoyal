@@ -12,8 +12,13 @@ public abstract class UnitState : ScriptableObject
     public abstract void Init();
     public abstract void Finish();
     public abstract void Run();
-    
 
+
+#if UNITY_EDITOR
+
+    public virtual void DebugDrowDistance(Unit unit) { }
+    
+#endif
 
 }
 

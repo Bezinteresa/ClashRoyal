@@ -1,4 +1,5 @@
 
+
 using UnityEngine;
 
 [RequireComponent(typeof(UnitParameters))]
@@ -59,4 +60,21 @@ public class Unit : MonoBehaviour
 
     }
 
+
+#if UNITY_EDITOR
+    [Space(20)]
+    [SerializeField] private bool _debug = false;
+    private void OnDrawGizmos()
+    {
+        if (_debug == false) return;
+        if (_chaseState != null) _chaseStateSO.DebugDrowDistance(this);
+    }
+
+
+#endif
+
+
+
 }
+
+

@@ -6,11 +6,11 @@ using UnityEngine.AI;
 public class NavMeshMove : UnitState
 {
     
-    
-    private Vector3 _targetPosition;
     private NavMeshAgent _agent;
     private bool _targetIsEnemy;
     private Tower _nearestTower;
+    private MapInfo _mapInfo;
+
 
     public override void Constructor(Unit unit) {
         base.Constructor(unit);
@@ -28,10 +28,10 @@ public class NavMeshMove : UnitState
     public override void Init() {
 
         Vector3 unitPosition = _unit.transform.position;
-        _nearestTower = MapInfo.Instance.GetNearestTower(in unitPosition, _targetIsEnemy);
-        _targetPosition = _nearestTower.transform.position;
+        _mapInfo =  MapInfo.Instance;
+        _nearestTower = _mapInfo.GetNearestTower(in unitPosition, _targetIsEnemy);
 
-        _agent.SetDestination(_targetPosition);
+        _agent.SetDestination(_nearestTower.transform.position);
 
     }
 
@@ -54,11 +54,11 @@ public class NavMeshMove : UnitState
 
    private bool TryAttackUnit() {
 
-
-        bool hasEnemy = MapInfo.Instance.TryGetNearestUnit(_unit.transform.position, out Unit enemy, _targetIsEnemy, out float distance);
+        bool hasEnemy = _mapInfo.TryGetNearestUnit(_unit.transform.position, out Unit enemy, _targetIsEnemy, out float distance);
         if (hasEnemy == false) return false;
 
-        if (_unit.parameters.startChaseDistance >= distance + enemy.parameters.modelRadius) {
+        if (_unit.parameters.startChaseDistance >= distance) 
+        {
             _unit.SetState(UnitStateType.Chase);
             return true;
 
@@ -68,8 +68,7 @@ public class NavMeshMove : UnitState
     }
 
     public override void Finish() {
-        _agent.isStopped = true;
-
+        _agent.SetDestination(_unit.transform.position);
     }
 
 
