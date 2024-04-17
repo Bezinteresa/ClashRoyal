@@ -10,6 +10,7 @@ public class NavMeshChase : UnitState
     private NavMeshAgent _agent;
     private bool _targetIsEnemy;
     private Unit _targetUnit;
+    private float _startAttackDistance = 0;
 
     public override void Constructor(Unit unit)
     {
@@ -23,7 +24,10 @@ public class NavMeshChase : UnitState
     }
     public override void Init()
     {
-        MapInfo.Instance.TryGetNearestUnit(_unit.transform.position, out _targetUnit, _targetIsEnemy, out float distance);
+       if( MapInfo.Instance.TryGetNearestUnit(_unit.transform.position, _targetIsEnemy, out _targetUnit, out float distance))
+        {
+            _startAttackDistance = _unit.parameters.startAttackDistance + _targetUnit.parameters.modelRadius;
+        }
     }
 
     public override void Run()
@@ -37,7 +41,7 @@ public class NavMeshChase : UnitState
         float distanceToTarget = Vector3.Distance(_unit.transform.position, _targetUnit.transform.position);
 
         if (distanceToTarget > _unit.parameters.stopChaseDistance) _unit.SetState(UnitStateType.Default);
-        else if (distanceToTarget <= _unit.parameters.startAttackDistance + _targetUnit.parameters.modelRadius)
+        else if (distanceToTarget <= _startAttackDistance)
             _unit.SetState(UnitStateType.Attack);
         else
         {

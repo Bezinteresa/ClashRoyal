@@ -54,7 +54,7 @@ public class NavMeshMove : UnitState
 
    private bool TryAttackUnit() {
 
-        bool hasEnemy = _mapInfo.TryGetNearestUnit(_unit.transform.position, out Unit enemy, _targetIsEnemy, out float distance);
+        bool hasEnemy = _mapInfo.TryGetNearestUnit(_unit.transform.position,  _targetIsEnemy,out Unit enemy, out float distance);
         if (hasEnemy == false) return false;
 
         if (_unit.parameters.startChaseDistance >= distance) 
