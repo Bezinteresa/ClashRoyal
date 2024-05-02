@@ -1,8 +1,10 @@
+using System;
 using UnityEngine;
 
 [RequireComponent(typeof(UnitParameters), typeof(Health))]
-public class Unit : MonoBehaviour, IHealth
+public class Unit : MonoBehaviour, IHealth, IDestroyed
 {
+   public event Action Destroyed;
 
     [field: SerializeField] public Health health { get; private set; }
     [field: SerializeField] public bool isEnemy { get; private set; } = false;
@@ -15,7 +17,25 @@ public class Unit : MonoBehaviour, IHealth
      private UnitState _attackState;
     private UnitState _currentState;
 
-    private void Start() {
+ 
+
+    private void Start() 
+    {
+        CreteStates();
+        _currentState = _defaultState;
+        _currentState.Init();
+
+        health.UpdateHealth += CheckDestroy;
+    }
+
+    private void Update() {
+        
+        _currentState.Run();
+
+    }
+
+    private void CreteStates()
+    {
         _defaultState = Instantiate(_defaultStateSO);
         _defaultState.Constructor(this);
 
@@ -24,15 +44,16 @@ public class Unit : MonoBehaviour, IHealth
 
         _attackState = Instantiate(_attackStateSO);
         _attackState.Constructor(this);
-
-        _currentState = _defaultState;
-        _currentState.Init();
     }
 
-    private void Update() {
-        
-        _currentState.Run();
+    private void CheckDestroy(float currentHP)
+    {
+        if (currentHP > 0) return;
 
+        health.UpdateHealth -= CheckDestroy;
+        Destroy(gameObject);
+
+        Destroyed?.Invoke();
     }
 
     public void SetState(UnitStateType type) {
@@ -63,15 +84,14 @@ public class Unit : MonoBehaviour, IHealth
 #if UNITY_EDITOR
     [Space(20)]
     [SerializeField] private bool _debug = false;
+
     private void OnDrawGizmos()
     {
         if (_debug == false) return;
         if (_chaseState != null) _chaseStateSO.DebugDrowDistance(this);
     }
 
-
 #endif
-
 
 
 }

@@ -1,16 +1,14 @@
-
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.AI;
 
-[CreateAssetMenu(fileName = "NavMeshChase", menuName = "UnitState/NavMeshChase")]
-public class NavMeshChase : UnitState
+public abstract class UnitStateNavMeshChase : UnitState
 {
 
     private NavMeshAgent _agent;
-    private bool _targetIsEnemy;
-    private Unit _targetUnit;
-    private float _startAttackDistance = 0;
+    protected bool _targetIsEnemy;
+    protected Unit _targetUnit;
+    protected float _startAttackDistance = 0;
 
     public override void Constructor(Unit unit)
     {
@@ -22,21 +20,25 @@ public class NavMeshChase : UnitState
         if (_agent == null) Debug.LogError($"На персонаже {unit.name} нет компонента NavMeshAgent");
 
     }
+
     public override void Init()
     {
-       if( MapInfo.Instance.TryGetNearestUnit(_unit.transform.position, _targetIsEnemy, out _targetUnit, out float distance))
-        {
-            _startAttackDistance = _unit.parameters.startAttackDistance + _targetUnit.parameters.modelRadius;
-        }
-    }
+      FindTargetUnit(out _targetUnit);
 
-    public override void Run()
-    {
-        if(_targetUnit == null)
+        if (_targetUnit == null)
         {
             _unit.SetState(UnitStateType.Default);
             return;
-        } 
+        }
+       _startAttackDistance = _unit.parameters.startAttackDistance + _targetUnit.parameters.modelRadius;
+
+    }
+
+    
+
+    public override void Run()
+    {
+      
 
         float distanceToTarget = Vector3.Distance(_unit.transform.position, _targetUnit.transform.position);
 
@@ -55,22 +57,21 @@ public class NavMeshChase : UnitState
         _agent.SetDestination(_unit.transform.position);
     }
 
-
+   
 
 #if UNITY_EDITOR
 
     public override void DebugDrowDistance(Unit unit)
     {
-
         Handles.color = Color.red;
-        Handles.DrawWireDisc(unit.transform.position,Vector3.up, unit.parameters.startChaseDistance);
+        Handles.DrawWireDisc(unit.transform.position, Vector3.up, unit.parameters.startChaseDistance);
         Handles.color = Color.yellow;
-        Handles.DrawWireDisc(unit.transform.position,Vector3.up, unit.parameters.stopChaseDistance);
-
+        Handles.DrawWireDisc(unit.transform.position, Vector3.up, unit.parameters.stopChaseDistance);
 
     }
 
-
 #endif
+
+  protected abstract void FindTargetUnit(out Unit targetUnit);
 
 }

@@ -1,15 +1,16 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "UsualAttack", menuName = "UnitState/UsualAttack")]
-public class UsualAttack : UnitState
+public abstract class UnitStateAttack : UnitState
 {
     [SerializeField] private float _damage = 1.5f;
     [SerializeField] private float _delay = 1f;
     private float _time = 0;
 
     private float _stopAttackDisctance = 0;
-    private bool _targetIsEnemy;
-    private Health _target;
+    protected bool _targetIsEnemy;
+    protected Health _target;
 
     public override void Constructor(Unit unit)
     {
@@ -53,32 +54,11 @@ public class UsualAttack : UnitState
 
     public override void Finish()
     {
-       
+
 
     }
 
-    private bool TryFindTarget(out float stopAttackDistance)
-    {
-        Vector3 unitPosition = _unit.transform.position;
-
-        bool hasEnemy = MapInfo.Instance.TryGetNearestUnit(unitPosition, _targetIsEnemy, out Unit enemy, out float distance);
-        if (hasEnemy && distance - enemy.parameters.modelRadius <= _unit.parameters.startAttackDistance)
-        {
-            _target = enemy.health;
-            stopAttackDistance = _unit.parameters.stopAttackDiaaaastance + enemy.parameters.modelRadius;
-            return true;
-        }
-
-        Tower targetTower = MapInfo.Instance.GetNearestTower(unitPosition, _targetIsEnemy);
-        if (targetTower.GetDistance(unitPosition) <= _unit.parameters.startAttackDistance)
-        {
-            _target = targetTower.health;
-            stopAttackDistance = _unit.parameters.stopAttackDiaaaastance + targetTower._radius;
-            return true;
-        }
-
-        stopAttackDistance = 0;
-        return false;
-    }
+    protected abstract bool TryFindTarget(out float stopAttackDistance);
+    
 
 }

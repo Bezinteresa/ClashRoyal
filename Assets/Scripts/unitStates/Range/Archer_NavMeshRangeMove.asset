@@ -9,6 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab1023fea39f6c74f9004de6043a82ce, type: 3}
-  m_Name: Warrior_NavMeshChase
+  m_Script: {fileID: 11500000, guid: 26d831fe59d274948bce2e5b7a9a7df5, type: 3}
+  m_Name: Archer_NavMeshRangeMove
   m_EditorClassIdentifier: 
