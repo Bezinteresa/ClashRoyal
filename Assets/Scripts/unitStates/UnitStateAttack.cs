@@ -1,11 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class UnitStateAttack : UnitState
 {
     [SerializeField] private float _damage = 1.5f;
-    [SerializeField] private float _delay = 1f;
+    private float _delay = 1f;
     private float _time = 0;
 
     private float _stopAttackDisctance = 0;
@@ -16,7 +14,7 @@ public abstract class UnitStateAttack : UnitState
     {
         base.Constructor(unit);
         _targetIsEnemy = _unit.isEnemy == false;
-
+        _delay = _unit.parameters.damageDelay;
     }
 
     public override void Init()
