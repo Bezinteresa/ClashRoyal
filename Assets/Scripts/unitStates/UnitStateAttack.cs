@@ -2,10 +2,9 @@ using UnityEngine;
 
 public abstract class UnitStateAttack : UnitState
 {
-    [SerializeField] private float _damage = 1.5f;
+    [SerializeField] protected float _damage = 1.5f;
     private float _delay = 1f;
     private float _time = 0;
-
     private float _stopAttackDisctance = 0;
     protected bool _targetIsEnemy;
     protected Health _target;
@@ -46,17 +45,19 @@ public abstract class UnitStateAttack : UnitState
         float distanceToTarget = Vector3.Distance(_target.transform.position, _unit.transform.position);
         if (distanceToTarget > _stopAttackDisctance) _unit.SetState(UnitStateType.Chase);
 
-        _target.ApplyDamage(_damage);
+        Attack();
+    }
 
+    protected virtual void Attack()
+    {
+        _target.ApplyDamage(_damage);
     }
 
     public override void Finish()
     {
 
-
     }
 
     protected abstract bool TryFindTarget(out float stopAttackDistance);
     
-
 }

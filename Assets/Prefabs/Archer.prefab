@@ -198,10 +198,11 @@ MonoBehaviour:
   <isFly>k__BackingField: 0
   <speed>k__BackingField: 4
   <modelRadius>k__BackingField: 0.5
-  <startChaseDistance>k__BackingField: 6
-  <stopChaseDistance>k__BackingField: 8
-  _startAttackDistance: 3
-  _stopAttackDiaaaastance: 4
+  <startChaseDistance>k__BackingField: 10
+  <stopChaseDistance>k__BackingField: 12
+  <damageDelay>k__BackingField: 2
+  _startAttackDistance: 5.2
+  _stopAttackDiaaaastance: 6
 --- !u!114 &6060604615428545693
 MonoBehaviour:
   m_ObjectHideFlags: 0

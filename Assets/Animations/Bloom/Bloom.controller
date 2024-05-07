@@ -86,7 +86,7 @@ AnimatorState:
   m_PrefabAsset: {fileID: 0}
   m_Name: Projectile Attack Trajectory
   m_Speed: 0.6
-  m_CycleOffset: 0
+  m_CycleOffset: 0.6
   m_Transitions:
   - {fileID: -6155406980176788359}
   m_StateMachineBehaviours: []
@@ -102,7 +102,7 @@ AnimatorState:
   m_Tag: 
   m_SpeedParameter: AttackSpeed
   m_MirrorParameter: 
-  m_CycleOffsetParameter: 
+  m_CycleOffsetParameter: AttackSpeed
   m_TimeParameter: 
 --- !u!91 &9100000
 AnimatorController:
@@ -118,13 +118,13 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: AttackSpeed
     m_Type: 1
     m_DefaultFloat: 1
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -149,7 +149,7 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: -1692710592762160489}
-    m_Position: {x: 370, y: 40, z: 0}
+    m_Position: {x: 370, y: 20, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -8756180715281341780}
     m_Position: {x: 370, y: 120, z: 0}
