@@ -63,9 +63,9 @@ public abstract class UnitStateNavMeshChase : UnitState
 
     public override void DebugDrowDistance(Unit unit)
     {
-        Handles.color = Color.red;
+        Handles.color = Color.blue;
         Handles.DrawWireDisc(unit.transform.position, Vector3.up, unit.parameters.startChaseDistance);
-        Handles.color = Color.yellow;
+        Handles.color = Color.red;
         Handles.DrawWireDisc(unit.transform.position, Vector3.up, unit.parameters.stopChaseDistance);
 
     }

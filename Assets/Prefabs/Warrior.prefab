@@ -201,8 +201,8 @@ MonoBehaviour:
   <startChaseDistance>k__BackingField: 6
   <stopChaseDistance>k__BackingField: 8
   <damageDelay>k__BackingField: 2
-  _startAttackDistance: 3
-  _stopAttackDiaaaastance: 4
+  _startAttackDistance: 1
+  _stopAttackDiaaaastance: 2
 --- !u!114 &6060604615428545693
 MonoBehaviour:
   m_ObjectHideFlags: 0

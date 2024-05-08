@@ -31,16 +31,16 @@ public abstract class UnitStateAttack : UnitState
 
     public override void Run()
     {
-        _time += Time.deltaTime;
-        //Если время меньше задержки возврат
-        if (_time < _delay) return;
-        _time -= _delay;
-
         if (_target == false)
         {
             _unit.SetState(UnitStateType.Default);
             return;
         }
+
+        _time += Time.deltaTime;
+        //Если время меньше задержки возврат
+        if (_time < _delay) return;
+        _time -= _delay;
 
         float distanceToTarget = Vector3.Distance(_target.transform.position, _unit.transform.position);
         if (distanceToTarget > _stopAttackDisctance) _unit.SetState(UnitStateType.Chase);
