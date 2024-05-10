@@ -40,6 +40,8 @@ public class MapInfo : MonoBehaviour
         SubscribeDestroy(_playerTowers);
         SubscribeDestroy(_enemyWalkingUnits);
         SubscribeDestroy(_playerWalkingUnits);
+        SubscribeDestroy(_enemyFlyUnits);
+        SubscribeDestroy(_playerFlyUnits);
     }
 
     public void AddUnit(Unit unit)
@@ -89,6 +91,8 @@ public class MapInfo : MonoBehaviour
 
         distance = float.MaxValue;
         if (objects.Count <= 0) return null;
+
+        if(objects[0]==null) return null;
 
         distance = Vector3.Distance(currentPosition, objects[0].transform.position);
         T nearest = objects[0];
