@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,6 +11,8 @@ public class AuthorizationUI : MonoBehaviour
     [SerializeField] private InputField _password;
     [SerializeField] private Button _signIn;
     [SerializeField] private Button _signUp;
+    [SerializeField] private GameObject _authorizationCanvas;
+    [SerializeField] private GameObject _registrationCanvas;
 
     private void Awake()
     {
@@ -17,6 +20,7 @@ public class AuthorizationUI : MonoBehaviour
         _password.onEndEdit.AddListener(_authorization.SetPassword);
 
         _signIn.onClick.AddListener(SignInClick);
+        _signUp.onClick.AddListener(SignUpClick);
 
         //Сделать отдельный метод вместо безымянного 
         _authorization.Error += () =>
@@ -24,6 +28,14 @@ public class AuthorizationUI : MonoBehaviour
             _signIn.gameObject.SetActive(true);
             _signUp.gameObject.SetActive(true);
         };
+    }
+
+    private void SignUpClick()
+    {
+
+        _authorizationCanvas.SetActive(false);
+        _registrationCanvas.SetActive(true);
+
     }
 
     private void SignInClick()

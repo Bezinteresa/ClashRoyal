@@ -30,14 +30,14 @@ public class Network : MonoBehaviour
     {
         #region Example with WWWForm and List<IMultipartFormSection>
         // 1)  Вариант если мало значений
-        WWWForm form = new WWWForm();
-        form.AddField("Login", "Barsik");
+       // WWWForm form = new WWWForm();
+       // form.AddField("Login", "Barsik");
 
-        // 2) Вариант если много значений
-        List<IMultipartFormSection> sections = new List<IMultipartFormSection>();
-        IMultipartFormSection section = new MultipartFormDataSection("Login", "Barsik");
+        // 2) Вариант если много значений и файлы
+       // List<IMultipartFormSection> sections = new List<IMultipartFormSection>();
+       // IMultipartFormSection section = new MultipartFormDataSection("Login", "Barsik");
 
-        sections.Add(section);
+        // sections.Add(section);
 
         // В запрос Post( , form или sections) 
         //using (UnityWebRequest www = UnityWebRequest.Post(url, sections))

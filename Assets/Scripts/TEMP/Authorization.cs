@@ -12,6 +12,8 @@ public class Authorization : MonoBehaviour
 
     public event Action Error;
 
+
+
     public void SetLogin(string login)
     {
         _login = login;
@@ -41,7 +43,7 @@ public class Authorization : MonoBehaviour
     }
 
     private void Success(string data) {
-
+        
         string[] result = data.Split('|');
         if (result.Length < 2 || result[0] != "ok")
         {
